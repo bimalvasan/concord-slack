@@ -1,0 +1,16 @@
+flows:
+  default:
+  - task: slack
+    in:
+      channelId: "C5W9ELY7Q"
+      text: "Process ${txId} is completed"
+      username: "my bot"
+      iconEmoji: ":chart_with_upwards_trend:"
+      attachments:
+        - fallback: "Verify changes at https://github.com"
+          actions:
+            - type: "button"
+              text: "Check Status"
+              url: "https://github.com"
+
+  - log: notified
